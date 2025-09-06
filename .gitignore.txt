@@ -1,0 +1,19 @@
+# Игнорируем папки сборки Visual Studio
+[Bb]uild/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Файлы кэша и пользовательские настройки
+*.user
+*.suo
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+
+# Файлы самой Visual Studio
+.vs/
