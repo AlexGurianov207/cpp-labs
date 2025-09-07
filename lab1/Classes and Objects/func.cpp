@@ -1,5 +1,7 @@
 #include"func.h"
 
+using namespace std;
+
 MyString::MyString() :length(0), str(nullptr) {
 	str = new char[1];
 	str[0] = '\0';
@@ -16,9 +18,11 @@ MyString::MyString(const char* newString) {
 		length = 0;
 	}
 	else {
-		length = strlen(newString);
+		string temp(newString);
+		length = temp.size();
 		str = new char[length + 1];
-		strcpy_s(str,length + 1, newString);
+		copy(temp.begin(), temp.end(), str);
+		str[length] = '\0';
 	}
 }
 

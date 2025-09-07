@@ -5,15 +5,13 @@
 #include<cstring>
 #include<string>
 
-using namespace std;
-
 class MyString {
 private:
 	size_t length;
 	char* str;
 public:
 	MyString();
-	MyString(const char* newString);
+	explicit MyString(const char* newString);
 	MyString(const MyString& other);
 
 	void printStr();
