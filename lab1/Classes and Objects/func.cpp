@@ -20,7 +20,7 @@ MyString::MyString(const char* newString) {
 		string temp(newString);
 		length = temp.size();
 		str = new char[length + 1];
-		copy(temp.begin(), temp.end(), str);
+		copy(temp.begin(),temp.end(), str);
 		str[length] = '\0';
 	}
 }
@@ -61,8 +61,8 @@ MyString MyString::intersection(const MyString& other) {
 		}
 
 		bool alreadyInResult = false;
-		for (int k = 0; k < result.size(); k++) {
-			if (currentSymbol == result[k]) {
+		for (char c : result) {
+			if (currentSymbol == c) {
 				alreadyInResult = true;
 				break;
 			}
