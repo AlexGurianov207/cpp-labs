@@ -32,14 +32,15 @@ void MyString::printStr() {
 }
 
 void MyString::inputStr() {
-	char buffer[256];
+	string buffer;
 	cout << "Enter the string" << endl;
-	std::cin.getline(buffer, 1000);
+	getline(cin, buffer);
 
 	delete[] str;
-	length = strlen(buffer);
+	length = buffer.length();
 	str = new char[length + 1];
-	strcpy_s(str,length + 1, buffer);
+	copy(buffer.begin(), buffer.end(), str);
+	str[length] = '\0';
 }
 
 MyString MyString::intersection(const MyString& other) {
