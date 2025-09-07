@@ -9,7 +9,9 @@ class MyString {
 private:
 	size_t length;
 	char* str;
+
 public:
+
 	MyString();
 	explicit MyString(const char* newString);
 	MyString(const MyString& other);

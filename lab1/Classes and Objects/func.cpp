@@ -2,8 +2,7 @@
 
 using namespace std;
 
-MyString::MyString() :length(0), str(nullptr) {
-	str = new char[1];
+MyString::MyString() :length(0), str(new char[1]) {
 	str[0] = '\0';
 }
 
@@ -48,13 +47,12 @@ void MyString::inputStr() {
 }
 
 MyString MyString::intersection(const MyString& other) {
-	char result[256];
-	int resultIndex = 0;
+	string result;
 
 	for (int i = 0; i < length; i++) {
 		char currentSymbol = str[i];
-		bool foungInOther = false;
 
+		bool foungInOther = false;
 		for (int j = 0; j < other.length; j++) {
 			if (currentSymbol == other.str[j]) {
 				foungInOther = true;
@@ -63,7 +61,7 @@ MyString MyString::intersection(const MyString& other) {
 		}
 
 		bool alreadyInResult = false;
-		for (int k = 0; k < resultIndex; k++) {
+		for (int k = 0; k < result.size(); k++) {
 			if (currentSymbol == result[k]) {
 				alreadyInResult = true;
 				break;
@@ -71,10 +69,9 @@ MyString MyString::intersection(const MyString& other) {
 		}
 
 		if (foungInOther && !alreadyInResult) {
-			result[resultIndex++] = currentSymbol;
+			result += currentSymbol;
 		}
 	}
 
-	result[resultIndex] = '\0';
-	return MyString(result);
+	return MyString(result.c_str());
 }
