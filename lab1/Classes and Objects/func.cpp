@@ -20,7 +20,9 @@ MyString::MyString(const char* newString) {
 		string temp(newString);
 		length = temp.size();
 		str = new char[length + 1];
-		copy(temp.begin(),temp.end(), str);
+		for (size_t i = 0; i <= length; i++) {
+			str[i] = newString[i];
+		}
 		str[length] = '\0';
 	}
 }
@@ -42,7 +44,10 @@ void MyString::inputStr() {
 	delete[] str;
 	length = buffer.length();
 	str = new char[length + 1];
-	copy(buffer.begin(), buffer.end(), str);
+
+	for (size_t i = 0; i < length; ++i) {
+		str[i] = buffer[i];
+	}
 	str[length] = '\0';
 }
 
