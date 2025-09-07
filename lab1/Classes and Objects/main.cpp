@@ -1,19 +1,36 @@
-#include"func.h"
+#include "func.h"
 
 int main() {
+  MyString emptyStr;
+  emptyStr.printStr();
 
-	MyString newStr("Hello World");
+  MyString original("Test constructor");
+  MyString copy = original;
+  copy.printStr();
 
-	newStr.printStr();
+  MyString str3("hello");
+  MyString str4("hello");
+  str3.intersection(str4).printStr();
 
-	newStr.inputStr();
+  MyString str1("abc");
+  MyString str2("xyz");
+  str1.intersection(str2).printStr();
 
-	newStr.printStr();
+  MyString empty1, empty2;
+  empty1.intersection(empty2).printStr();
 
-	MyString toIntersection("Apple and worms");
-	MyString intersectionResult = newStr.intersection(toIntersection);
+  MyString newStr("Hello World");
 
-	intersectionResult.printStr();
+  newStr.printStr();
 
-	return 0;
+  newStr.inputStr();
+
+  newStr.printStr();
+
+  MyString toIntersection("Apple and worms");
+  MyString intersectionResult = newStr.intersection(toIntersection);
+
+  intersectionResult.printStr();
+
+  return 0;
 }

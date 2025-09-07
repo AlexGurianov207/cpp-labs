@@ -1,27 +1,25 @@
 #ifndef FUNC
 #define FUNC
 
-#include<iostream>
-#include<cstring>
-#include<string>
+#include <cstring>
+#include <iostream>
+#include <string>
 
 class MyString {
-private:
-	size_t length;
-	char* str;
+ private:
+  size_t length;
+  char* str;
 
-public:
+ public:
+  MyString();
+  explicit MyString(const char* newString);
+  MyString(const MyString& other);
 
-	MyString();
-	explicit MyString(const char* newString);
-	MyString(const MyString& other);
+  void printStr()const;
+  void inputStr();
+  MyString intersection(const MyString& other)const;
 
-	void printStr();
-	void inputStr();
-	MyString intersection(const MyString& other);
-
-
-	~MyString();
+  ~MyString();
 };
 
 #endif
