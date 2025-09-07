@@ -30,3 +30,46 @@ MyString::MyString(const MyString& other):length(other.length) {
 void MyString::printStr() {
 	cout << str << endl;
 }
+
+void MyString::inputStr() {
+	char buffer[256];
+	cout << "Enter the string" << endl;
+	std::cin.getline(buffer, 1000);
+
+	delete[] str;
+	length = strlen(buffer);
+	str = new char[length + 1];
+	strcpy_s(str,length + 1, buffer);
+}
+
+MyString MyString::intersection(const MyString& other) {
+	char result[256];
+	int resultIndex = 0;
+
+	for (int i = 0; i < length; i++) {
+		char currentSymbol = str[i];
+		bool foungInOther = false;
+
+		for (int j = 0; j < other.length; j++) {
+			if (currentSymbol == other.str[j]) {
+				foungInOther = true;
+				break;
+			}
+		}
+
+		bool alreadyInResult = false;
+		for (int k = 0; k < resultIndex; k++) {
+			if (currentSymbol == result[k]) {
+				alreadyInResult = true;
+				break;
+			}
+		}
+
+		if (foungInOther && !alreadyInResult) {
+			result[resultIndex++] = currentSymbol;
+		}
+	}
+
+	result[resultIndex] = '\0';
+	return MyString(result);
+}

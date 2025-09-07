@@ -16,6 +16,8 @@ public:
 	MyString(const MyString& other);
 
 	void printStr();
+	void inputStr();
+	MyString intersection(const MyString& other);
 
 
 	~MyString();
