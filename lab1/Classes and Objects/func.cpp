@@ -40,7 +40,7 @@ void MyString::inputStr() {
   while (cin.get(symbol) && symbol != '\n') {
     if (length <= capacity - 1) {
       capacity = length + 2;
-      char *newStr = new char[capacity];
+      auto *newStr = new char[capacity];
       for (size_t i = 0; i < length; i++) {
         newStr[i] = str[i];
       }
