@@ -27,31 +27,31 @@ MyString::MyString(const MyString &other) : length(other.length) {
 void MyString::printStr() const { cout << str << endl; }
 
 void MyString::inputStr() {
-    cout << "Enter the string:" << endl;
+  cout << "Enter the string:" << endl;
 
-    delete[] str;
+  delete[] str;
 
-    size_t capacity = 1;
-    length = 0;
-    str = new char[1];
-    str[length] = '\0';
+  size_t capacity = 1;
+  length = 0;
+  str = new char[1];
+  str[length] = '\0';
 
-    char symbol;
-    while (cin.get(symbol) && symbol != '\n') {
-        if (length <= capacity - 1) {
-            capacity = length + 2;
-            char *newStr = new char[capacity];
-            for (size_t i = 0; i < length; i++) {
-                newStr[i] = str[i];
-            }
+  char symbol;
+  while (cin.get(symbol) && symbol != '\n') {
+    if (length <= capacity - 1) {
+      capacity = length + 2;
+      char *newStr = new char[capacity];
+      for (size_t i = 0; i < length; i++) {
+        newStr[i] = str[i];
+      }
 
-            delete[] str;
-            str = newStr;
-        }
-
-        str[length++] = symbol;
+      delete[] str;
+      str = newStr;
     }
-    str[length] = '\0';
+
+    str[length++] = symbol;
+  }
+  str[length] = '\0';
 }
 
 MyString MyString::intersection(const MyString &other) const {
