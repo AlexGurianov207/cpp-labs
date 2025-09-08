@@ -16,7 +16,8 @@ int main() {
   MyString str2("xyz");
   str1.intersection(str2).printStr();
 
-  MyString empty1, empty2;
+  MyString empty1;
+  MyString empty2;
   empty1.intersection(empty2).printStr();
 
   MyString newStr("Hello World");

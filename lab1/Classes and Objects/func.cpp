@@ -13,14 +13,9 @@ MyString::MyString(const char *newString) {
     length = 0;
 
   } else {
-    string temp(newString);
-    length = temp.size();
+    length = strlen(newString);
     str = new char[length + 1];
-
-    for (size_t i = 0; i <= length; i++) {
-      str[i] = newString[i];
-    }
-    str[length] = '\0';
+    strcpy_s(str, length + 1, newString);
   }
 }
 
@@ -29,24 +24,37 @@ MyString::MyString(const MyString &other) : length(other.length) {
   strcpy_s(str, length + 1, other.str);
 }
 
-void MyString::printStr()const { cout << str << endl; }
+void MyString::printStr() const { cout << str << endl; }
 
 void MyString::inputStr() {
-  string buffer;
-  cout << "Enter the string" << endl;
-  getline(cin, buffer);
+    cout << "Enter the string:" << endl;
 
-  delete[] str;
-  length = buffer.length();
-  str = new char[length + 1];
+    delete[] str;
 
-  for (size_t i = 0; i < length; ++i) {
-    str[i] = buffer[i];
-  }
-  str[length] = '\0';
+    size_t capacity = 1;
+    length = 0;
+    str = new char[1];
+    str[length] = '\0';
+
+    char symbol;
+    while (cin.get(symbol) && symbol != '\n') {
+        if (length <= capacity - 1) {
+            capacity = length + 2;
+            char *newStr = new char[capacity];
+            for (size_t i = 0; i < length; i++) {
+                newStr[i] = str[i];
+            }
+
+            delete[] str;
+            str = newStr;
+        }
+
+        str[length++] = symbol;
+    }
+    str[length] = '\0';
 }
 
-MyString MyString::intersection(const MyString &other)const {
+MyString MyString::intersection(const MyString &other) const {
   string result;
 
   for (int i = 0; i < length; i++) {
