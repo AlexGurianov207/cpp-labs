@@ -13,7 +13,10 @@ MyString::MyString(const char *newString) {
     length = 0;
 
   } else {
-    length = strlen(newString);
+    length = 0;
+    while (newString[length] != '\0') {
+      length++;
+    }
     str = new char[length + 1];
     strcpy_s(str, length + 1, newString);
   }
