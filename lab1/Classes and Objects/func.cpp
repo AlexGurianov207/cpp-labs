@@ -66,7 +66,7 @@ MyString MyString::intersection(const MyString &other) const {
     return MyString();
   }
 
-  char *temp = new char[length + 1];
+  auto *temp = new char[length + 1];
   size_t resultLength = 0;
   temp[resultLength] = '\0';
 

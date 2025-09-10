@@ -17,6 +17,8 @@ class MyString {
   void inputStr();
   MyString intersection(const MyString& other) const;
 
+  MyString& operator=(const MyString& other) = delete;
+
   ~MyString();
 };
 
