@@ -18,13 +18,17 @@ MyString::MyString(const char *newString) {
       length++;
     }
     str = new char[length + 1];
-    strcpy_s(str, length + 1, newString);
+    for (size_t i = 0; i <= length; i++) {
+      str[i] = newString[i];
+    }
   }
 }
 
 MyString::MyString(const MyString &other) : length(other.length) {
   str = new char[length + 1];
-  strcpy_s(str, length + 1, other.str);
+  for (size_t i = 0; i <= length; i++) {
+    str[i] = other.str[i];
+  }
 }
 
 void MyString::printStr() const { cout << str << endl; }
@@ -58,31 +62,92 @@ void MyString::inputStr() {
 }
 
 MyString MyString::intersection(const MyString &other) const {
-  string result;
+  if (length == 0 || other.length == 0) {
+    return MyString();
+  }
+
+  char *temp = new char[length + 1];
+  size_t resultLength = 0;
+  temp[resultLength] = '\0';
 
   for (int i = 0; i < length; i++) {
     char currentSymbol = str[i];
 
-    bool foungInOther = false;
+    bool foundInOther = false;
     for (int j = 0; j < other.length; j++) {
       if (currentSymbol == other.str[j]) {
-        foungInOther = true;
+        foundInOther = true;
         break;
       }
     }
 
+    if (!foundInOther) continue;
+
     bool alreadyInResult = false;
-    for (char c : result) {
-      if (currentSymbol == c) {
+    for (int k = 0; k < resultLength; k++) {
+      if (currentSymbol == temp[k]) {
         alreadyInResult = true;
         break;
       }
     }
 
-    if (foungInOther && !alreadyInResult) {
-      result += currentSymbol;
+    if (!alreadyInResult) {
+      temp[resultLength++] = currentSymbol;
     }
   }
 
-  return MyString(result.c_str());
+  MyString resultString;
+  if (resultLength > 0) {
+    delete[] resultString.str;
+    resultString.str = new char[resultLength + 1];
+    for (size_t k = 0; k < resultLength; k++) {
+      resultString.str[k] = temp[k];
+    }
+    resultString.str[resultLength] = '\0';
+    resultString.length = resultLength;
+  }
+  delete[] temp;
+  return resultString;
+}
+
+void testInputPrint() {
+  MyString firstStr;
+  cout << "Enter the first string" << endl;
+  firstStr.inputStr();
+  cout << "Your string: ";
+  firstStr.printStr();
+
+  MyString secondStr;
+  cout << "Enter the second string" << endl;
+  secondStr.inputStr();
+  cout << "Your string: ";
+  secondStr.printStr();
+}
+
+void testIntersection() {
+  MyString firstStrToIntersection;
+  firstStrToIntersection.inputStr();
+
+  MyString secondStrToIntersection;
+  secondStrToIntersection.inputStr();
+
+  MyString resultIntersection =
+      firstStrToIntersection.intersection(secondStrToIntersection);
+
+  cout << "Your ressult of intersection:";
+  resultIntersection.printStr();
+}
+
+void testConstructors() {
+  MyString emptyStr;
+  cout << "Empty string:";
+  emptyStr.printStr();
+
+  MyString newStr("It is a test string");
+  cout << "String:";
+  newStr.printStr();
+
+  MyString copiendStr(newStr);
+  cout << "Copy:";
+  copiendStr.printStr();
 }

@@ -1,37 +1,40 @@
 #include "func.h"
 
+using namespace std;
+
 int main() {
-  MyString emptyStr;
-  emptyStr.printStr();
+  bool running = true;
+  ;
+  int choice;
 
-  MyString original("Test constructor");
-  MyString copy = original;
-  copy.printStr();
+  while (running) {
+    cout << "---------MENU---------" << endl;
+    cout << "1.Testing constructors" << endl;
+    cout << "2.Testing input and print functions" << endl;
+    cout << "3.Testing intersection" << endl;
+    cout << "0. Exit" << endl;
 
-  MyString str3("hello");
-  MyString str4("hello");
-  str3.intersection(str4).printStr();
+    cin >> choice;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  MyString str1("abc");
-  MyString str2("xyz");
-  str1.intersection(str2).printStr();
-
-  MyString empty1;
-  MyString empty2;
-  empty1.intersection(empty2).printStr();
-
-  MyString newStr("Hello World");
-
-  newStr.printStr();
-
-  newStr.inputStr();
-
-  newStr.printStr();
-
-  MyString toIntersection("Apple and worms");
-  MyString intersectionResult = newStr.intersection(toIntersection);
-
-  intersectionResult.printStr();
+    switch (choice) {
+      case 1:
+        testConstructors();
+        break;
+      case 2:
+        testInputPrint();
+        break;
+      case 3:
+        testIntersection();
+        break;
+      case 0:
+        running = false;
+        cout << "Exit" << endl;
+        break;
+      default:
+        cout << "Error" << endl;
+    }
+  }
 
   return 0;
 }

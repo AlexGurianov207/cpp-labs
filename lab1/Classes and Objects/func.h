@@ -1,9 +1,7 @@
 #ifndef FUNC
 #define FUNC
 
-#include <cstring>
 #include <iostream>
-#include <string>
 
 class MyString {
  private:
@@ -15,11 +13,17 @@ class MyString {
   explicit MyString(const char* newString);
   MyString(const MyString& other);
 
-  void printStr()const;
+  void printStr() const;
   void inputStr();
-  MyString intersection(const MyString& other)const;
+  MyString intersection(const MyString& other) const;
 
   ~MyString();
 };
+
+void testInputPrint();
+
+void testIntersection();
+
+void testConstructors();
 
 #endif
