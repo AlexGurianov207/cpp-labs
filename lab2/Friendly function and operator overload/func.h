@@ -6,8 +6,8 @@
 
 class String {
  private:
-  char* data;
   size_t length;
+  char* data;
 
  public:
   String(const String& other);
