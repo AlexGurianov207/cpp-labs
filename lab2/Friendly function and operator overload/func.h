@@ -12,7 +12,7 @@ class String {
  public:
   String(const String& other);
   String();
-  String(const char* newString);
+  explicit String(const char* newString);
 
   String& operator++();
   String& operator--();
