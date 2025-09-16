@@ -5,7 +5,7 @@ using namespace std;
 int main() {
   bool running = true;
 
-  int choice;
+  char choice;
 
   while (running) {
     cout << "---------MENU---------" << endl;
@@ -18,16 +18,16 @@ int main() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     switch (choice) {
-      case 1:
+      case '1':
         testConstructors();
         break;
-      case 2:
+      case '2':
         testInputPrint();
         break;
-      case 3:
+      case '3':
         testIntersection();
         break;
-      case 0:
+      case '0':
         running = false;
         cout << "Exit" << endl;
         break;
