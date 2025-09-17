@@ -67,13 +67,14 @@ String& String::operator--() {
   return *this;
 }
 
-void printString(const String& str, ostream& outputStream = cout) {
-  outputStream << str.data;
+void printString(const String& str, ostream& outputStream) {
+    outputStream << str.data << endl;
 }
 
-void inputString(String& str, istream& inputStream = cin) {
+void inputString(String& str, istream& inputStream) {
   char buffer[1024];
-  inputStream.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+  cout << "Enter the string:";
 
   inputStream.getline(buffer, 1024);
 
