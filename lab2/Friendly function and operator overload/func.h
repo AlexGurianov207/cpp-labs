@@ -20,8 +20,8 @@ class String {
 
   ~String();
 
-  friend void printString(const String& str, std::ostream& outputStream);
-  friend void inputString(String& str, std::istream& inputStream);
+  friend void printString(const String& str);
+  friend void inputString(String& str);
 };
 
 #endif

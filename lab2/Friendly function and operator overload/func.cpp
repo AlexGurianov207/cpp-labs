@@ -67,34 +67,32 @@ String& String::operator--() {
   return *this;
 }
 
-void printString(const String& str, ostream& outputStream) {
-    outputStream << str.data << endl;
-}
+void printString(const String& str) { cout << str.data << endl; }
 
-void inputString(String& str, istream& inputStream) {
-    cout << "Enter the string:" << endl;
+void inputString(String& str) {
+  cout << "Enter the string:" << endl;
 
-    delete[] str.data;
+  delete[] str.data;
 
-    size_t capacity = 1;
-    str.length = 0;
-    str.data = new char[1];
-    str.data[str.length] = '\0';
+  size_t capacity = 1;
+  str.length = 0;
+  str.data = new char[1];
+  str.data[str.length] = '\0';
 
-    char symbol;
-    while (cin.get(symbol) && symbol != '\n') {
-        if (str.length <= capacity - 1) {
-            capacity = str.length + 2;
-            auto* newStr = new char[capacity];
-            for (size_t i = 0; i < str.length; i++) {
-                newStr[i] = str.data[i];
-            }
+  char symbol;
+  while (cin.get(symbol) && symbol != '\n') {
+    if (str.length <= capacity - 1) {
+      capacity = str.length + 2;
+      auto* newStr = new char[capacity];
+      for (size_t i = 0; i < str.length; i++) {
+        newStr[i] = str.data[i];
+      }
 
-            delete[] str.data;
-            str.data = newStr;
-        }
-
-        str.data[str.length++] = symbol;
+      delete[] str.data;
+      str.data = newStr;
     }
-    str.data[str.length] = '\0';
+
+    str.data[str.length++] = symbol;
+  }
+  str.data[str.length] = '\0';
 }
