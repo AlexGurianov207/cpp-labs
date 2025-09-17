@@ -72,23 +72,29 @@ void printString(const String& str, ostream& outputStream) {
 }
 
 void inputString(String& str, istream& inputStream) {
-  char buffer[1024];
+    cout << "Enter the string:" << endl;
 
-  cout << "Enter the string:";
+    delete[] str.data;
 
-  inputStream.getline(buffer, 1024);
+    size_t capacity = 1;
+    str.length = 0;
+    str.data = new char[1];
+    str.data[str.length] = '\0';
 
-  delete[] str.data;
+    char symbol;
+    while (cin.get(symbol) && symbol != '\n') {
+        if (str.length <= capacity - 1) {
+            capacity = str.length + 2;
+            auto* newStr = new char[capacity];
+            for (size_t i = 0; i < str.length; i++) {
+                newStr[i] = str.data[i];
+            }
 
-  str.length = 0;
-  while (buffer[str.length] != '\0') {
-    str.length++;
-  }
+            delete[] str.data;
+            str.data = newStr;
+        }
 
-  str.data = new char[str.length + 1];
-
-  for (int i = 0; i < str.length; i++) {
-    str.data[i] = buffer[i];
-  }
-  str.data[str.length] = '\0';
+        str.data[str.length++] = symbol;
+    }
+    str.data[str.length] = '\0';
 }
