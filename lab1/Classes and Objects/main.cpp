@@ -1,4 +1,4 @@
-#include "func.h"
+#include "mystring.h"
 
 using namespace std;
 
