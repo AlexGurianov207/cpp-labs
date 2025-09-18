@@ -67,9 +67,12 @@ String& String::operator--() {
   return *this;
 }
 
-void printString(const String& str) { cout << str.data << endl; }
+ostream& operator<<(ostream& os, const String& str) {
+  os << str.data << endl;
+  return os;
+}
 
-void inputString(String& str) {
+istream& operator>>(istream& is, String& str) {
   cout << "Enter the string:" << endl;
 
   delete[] str.data;
@@ -95,4 +98,6 @@ void inputString(String& str) {
     str.data[str.length++] = symbol;
   }
   str.data[str.length] = '\0';
+
+  return is;
 }

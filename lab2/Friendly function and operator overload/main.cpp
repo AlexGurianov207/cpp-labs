@@ -22,10 +22,10 @@ int main() {
 
     switch (choice) {
       case '1':
-        inputString(myString);
+          cin >> myString;
         break;
       case '2':
-        printString(myString);
+          cout << myString << endl;
         break;
       case '3':
         ++myString;
