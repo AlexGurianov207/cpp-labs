@@ -107,6 +107,13 @@ MyString MyString::intersection(const MyString &other) const {
     resultString.length = resultLength;
   }
   delete[] temp;
+
+  if (resultLength == 0) {
+      cout << "No common symbols" << endl;
+  }
+  else
+      cout << "Result:" << resultString.str << endl;
+
   return resultString;
 }
 
@@ -134,8 +141,6 @@ void testIntersection() {
   MyString resultIntersection =
       firstStrToIntersection.intersection(secondStrToIntersection);
 
-  cout << "Your ressult of intersection:";
-  resultIntersection.printStr();
 }
 
 void testConstructors() {
