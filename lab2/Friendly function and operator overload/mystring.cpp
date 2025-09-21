@@ -24,7 +24,7 @@ String::String(const char* newString) : isEncoded(false) {
   }
 }
 
-String::String(const String& other) : length(other.length), isEncoded(false) {
+String::String(const String& other) : length(other.length), isEncoded(other.isEncoded) {
   data = new char[length + 1];
   for (size_t i = 0; i <= length; i++) {
     data[i] = other.data[i];
