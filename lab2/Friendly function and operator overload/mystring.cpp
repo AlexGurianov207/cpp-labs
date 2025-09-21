@@ -63,8 +63,7 @@ String& String::operator--() {
     for (size_t i = 0; i < length; i++) {
       if (isalpha(data[i])) {
         char base = islower(data[i]) ? 'a' : 'A';
-        data[i] =
-            (data[i] - base - shift + alphabetSize) % alphabetSize + base;
+        data[i] = (data[i] - base - shift + alphabetSize) % alphabetSize + base;
       }
     }
     isEncoded = false;
