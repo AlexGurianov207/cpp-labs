@@ -66,3 +66,21 @@ String& String::operator--() {
   }
   return *this;
 }
+
+istream& operator>>(istream& is, String& str) {
+    string buffer;
+    getline(is, buffer);
+
+    delete[] str.data;
+    str.length = buffer.length();
+    str.data = new char[str.length + 1];
+    memcpy(str.data, buffer.data(), str.length);
+    str.data[str.length] = '\0';
+
+    return is;
+}
+
+ostream& operator<<(ostream& os, const String& str) {
+    os << str.data << endl;
+    return os;
+}
