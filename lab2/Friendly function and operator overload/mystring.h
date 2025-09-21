@@ -9,6 +9,10 @@ class String {
  private:
   size_t length;
   char* data;
+  bool isEncoded;
+
+  static constexpr int ALPHABET_SIZE = 26;
+  static constexpr int SHIFT = 1;
 
  public:
   String(const String& other);
@@ -22,24 +26,28 @@ class String {
   ~String();
 
   friend std::ostream& operator<<(std::ostream& os, const String& str) {
-      os << str.data << std::endl;
-      return os;
+    os << str.data << std::endl;
+    return os;
   }
 
   friend std::istream& operator>>(std::istream& is, String& str) {
-      std::cout << "Enter the string:";
-      std::string buffer;
-      std::getline(is, buffer);
+    std::string buffer;
+    std::getline(is, buffer);
 
-      delete[] str.data;
-      str.length = buffer.length();
-      str.data = new char[str.length + 1];
-      std::memcpy(str.data, buffer.data(), str.length);
-      str.data[str.length] = '\0';
+    delete[] str.data;
+    str.length = buffer.length();
+    str.data = new char[str.length + 1];
+    std::memcpy(str.data, buffer.data(), str.length);
+    str.data[str.length] = '\0';
 
-      return is;
+    return is;
   }
-
 };
+
+void testInput(String& myString);
+
+void testCoding(String& myString);
+
+void testDecoding(String& myString);
 
 #endif

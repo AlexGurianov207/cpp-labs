@@ -22,16 +22,16 @@ int main() {
 
     switch (choice) {
       case '1':
-        cin >> myString;
+        testInput(myString);
         break;
       case '2':
         cout << myString << endl;
         break;
       case '3':
-        ++myString;
+        testCoding(myString);
         break;
       case '4':
-        --myString;
+        testDecoding(myString);
         break;
       case '0':
         running = false;
