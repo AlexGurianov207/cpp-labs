@@ -21,9 +21,25 @@ class String {
 
   ~String();
 
-  friend std::ostream& operator<<(std::ostream& os, const String& str);
+  friend std::ostream& operator<<(std::ostream& os, const String& str) {
+      os << str.data << std::endl;
+      return os;
+  }
 
-  friend std::istream& operator>>(std::istream& is, String& str);
+  friend std::istream& operator>>(std::istream& is, String& str) {
+      std::cout << "Enter the string:";
+      std::string buffer;
+      std::getline(is, buffer);
+
+      delete[] str.data;
+      str.length = buffer.length();
+      str.data = new char[str.length + 1];
+      std::memcpy(str.data, buffer.data(), str.length);
+      str.data[str.length] = '\0';
+
+      return is;
+  }
+
 };
 
 #endif
