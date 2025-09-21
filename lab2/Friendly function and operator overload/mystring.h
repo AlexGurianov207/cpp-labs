@@ -11,8 +11,8 @@ class String {
   char* data;
   bool isEncoded = false;
 
-  static constexpr int ALPHABET_SIZE = 26;
-  static constexpr int SHIFT = 1;
+  static constexpr int alphabetSize = 26;
+  static constexpr int shift = 1;
 
  public:
   String(const String& other);
