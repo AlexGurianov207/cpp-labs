@@ -9,7 +9,7 @@ class String {
  private:
   size_t length;
   char* data;
-  bool isEncoded;
+  bool isEncoded = false;
 
   static constexpr int ALPHABET_SIZE = 26;
   static constexpr int SHIFT = 1;

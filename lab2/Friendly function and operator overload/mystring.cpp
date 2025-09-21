@@ -2,11 +2,9 @@
 
 using namespace std;
 
-String::String() : length(0), data(new char[1]), isEncoded(false) {
-  data[0] = '\0';
-}
+String::String() : length(0), data(new char[1]) { data[0] = '\0'; }
 
-String::String(const char* newString) : isEncoded(false) {
+String::String(const char* newString) {
   if (newString == nullptr) {
     data = new char[1];
     data[0] = '\0';
@@ -24,7 +22,8 @@ String::String(const char* newString) : isEncoded(false) {
   }
 }
 
-String::String(const String& other) : length(other.length), isEncoded(other.isEncoded) {
+String::String(const String& other)
+    : length(other.length), isEncoded(other.isEncoded) {
   data = new char[length + 1];
   for (size_t i = 0; i <= length; i++) {
     data[i] = other.data[i];
