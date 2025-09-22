@@ -40,6 +40,8 @@ class String {
     std::memcpy(str.data, buffer.data(), str.length);
     str.data[str.length] = '\0';
 
+    str.isEncoded = false;
+
     return is;
   }
 };
