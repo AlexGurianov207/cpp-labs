@@ -17,3 +17,10 @@ x86/
 
 # Файлы самой Visual Studio
 .vs/
+.vs/Friendly function and operator overload
+Friendly.3ba1d1da/x64/Debug
+x64/Debug
+*.Friendly function and operator overload.sln
+*.Friendly function and operator overload.vcxproj
+*.Friendly function and operator overload.vcxproj.filters
+*.Friendly function and operator overload.vcxproj.user
