@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|solutionrelative:mystring.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3BA1D1DA-5354-4BB3-8A43-9235C02A4798}|Friendly function and operator overload.vcxproj|solutionrelative:mystring.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mystring.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.h",
+              "RelativeDocumentMoniker": "mystring.h",
+              "ToolTip": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.h",
+              "RelativeToolTip": "mystring.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-19T06:56:52.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "mystring.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.cpp",
+              "RelativeDocumentMoniker": "mystring.cpp",
+              "ToolTip": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\mystring.cpp",
+              "RelativeToolTip": "mystring.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-19T06:56:10.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\C\u002B\u002B\\MyLabs\\lab2\\Friendly function and operator overload\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-07T07:37:06.796Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
